@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片描述录音</title>
+</head>
+<body>
+    <h1>描述图片</h1>
+
+    <!-- 图片展示区域 -->
+    <div>
+        <img id="randomImage" src="{{ url_for('static', filename='images/' + image_file) }}" alt="随机图片" width="500">
+    </div>
+
+    <!-- 隐藏的元素，用于存储图片的文件名 -->
+    <input type="hidden" id="imageFilename" value="{{ image_file }}">
+
+    <!-- 录音按钮 -->
+    <button id="recordButton">开始录音</button>
+    <button id="stopButton" disabled>停止录音</button>
+    <button id="uploadButton" disabled>上传录音</button>
+
+    <!-- 音频回放控件 -->
+    <audio id="audioPlayback" controls></audio>
+
+    <!-- 引入外部JavaScript文件 -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
