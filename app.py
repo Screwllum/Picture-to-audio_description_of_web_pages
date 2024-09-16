@@ -40,7 +40,7 @@ def upload_audio():
         return "不支持的文件类型", 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000,debug=True)
 
 
 
